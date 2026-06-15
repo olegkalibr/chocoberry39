@@ -1,6 +1,69 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  background: linear-gradient(
+    135deg,
+    #ffd6e7 0%,
+    #fff1dc 50%,
+    #f3e2c7 100%
+  );
+
+  font-family: Arial, sans-serif;
+}
+
+/* glass карточка */
+.card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 20px;
+  padding: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+  max-width: 600px;
+  margin: 100px auto;
+}
+
+/* клубнички */
+.strawberries span {
+  position: fixed;
+  bottom: -50px;
+  font-size: 24px;
+  opacity: 0.5;
+  animation: floatUp 18s linear infinite;
+}
+
+.strawberries span:nth-child(1) { left: 5%; animation-duration: 20s; }
+.strawberries span:nth-child(2) { left: 15%; animation-duration: 14s; }
+.strawberries span:nth-child(3) { left: 25%; animation-duration: 18s; }
+.strawberries span:nth-child(4) { left: 35%; animation-duration: 22s; }
+.strawberries span:nth-child(5) { left: 50%; animation-duration: 16s; }
+.strawberries span:nth-child(6) { left: 65%; animation-duration: 19s; }
+.strawberries span:nth-child(7) { left: 80%; animation-duration: 15s; }
+.strawberries span:nth-child(8) { left: 90%; animation-duration: 21s; }
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 0.5; }
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
