@@ -22,6 +22,7 @@ background:#fff7f8;
 color:#4b2c24;
 line-height:1.6;
 transition:0.3s;
+scroll-behavior:smooth;
 }
 
 /* 🌙 BUTTON */
@@ -36,6 +37,32 @@ border-radius:12px;
 cursor:pointer;
 background:white;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 🔥 NAVIGATION MENU */
+.nav{
+position:fixed;
+top:15px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:25px;
+padding:10px 18px;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(12px);
+border-radius:14px;
+z-index:999;
+}
+
+.nav a{
+text-decoration:none;
+color:#b33c5a;
+font-weight:600;
+font-size:14px;
+}
+
+.nav a:hover{
+opacity:0.6;
 }
 
 /* HERO */
@@ -114,6 +141,7 @@ margin-bottom:40px;
 color:#b33c5a;
 }
 
+/* ABOUT */
 .about{
 display:grid;
 grid-template-columns:1fr 1fr;
@@ -155,7 +183,7 @@ color:#b33c5a;
 font-weight:600;
 }
 
-/* 🌙 DARK MODE (FULL SITE) */
+/* 🌙 DARK MODE */
 body.dark{
 background:#121212;
 color:#f5f5f5;
@@ -187,6 +215,10 @@ color:#ff7aa8;
 .about{grid-template-columns:1fr;}
 h1{font-size:30px;}
 .section h2{font-size:28px;}
+.nav{
+font-size:12px;
+gap:15px;
+}
 }
 
 </style>
@@ -196,6 +228,13 @@ h1{font-size:30px;}
 
 <!-- 🌙 BUTTON -->
 <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+
+<!-- 🔥 NAVIGATION -->
+<nav class="nav">
+  <a href="#about">О нас</a>
+  <a href="#features">Почему мы</a>
+  <a href="#contact">Контакты</a>
+</nav>
 
 <!-- HERO -->
 <section class="hero">
@@ -225,78 +264,49 @@ Instagram
 </section>
 
 <!-- ABOUT -->
-<section class="section">
-
+<section class="section" id="about">
 <h2>О нас</h2>
 
 <div class="about">
 
-<img src="about.jpg.jpg" alt="Клубника в шоколаде">
+<img src="about.jpg.jpg">
 
 <div class="about-text">
-
-<p>
-Мы создаём вкусные десерты из свежей клубники и качественного шоколада.
-</p>
-
-<br>
-
-<p>
-Каждый стаканчик и каждый набор готовятся с любовью и вниманием к деталям.
-</p>
-
-<br>
-
-<p>
-Наша цель — дарить сладкое настроение и делать ваши моменты особенными.
-</p>
-
+<p>Мы создаём вкусные десерты из свежей клубники и качественного шоколада.</p>
 </div>
 
 </div>
-
 </section>
 
 <!-- FEATURES -->
-<section class="section">
+<section class="section" id="features">
 
 <h2>Почему выбирают нас</h2>
 
 <div class="features">
 
-<div class="feature">
-🍓 Свежая клубника
-</div>
-
-<div class="feature">
-🍫 Натуральный бельгийский шоколад
-</div>
-
-<div class="feature">
-🎁 Идеально для подарка
-</div>
-
-<div class="feature">
-✨ Красивое оформление
-</div>
+<div class="feature">🍓 Свежая клубника</div>
+<div class="feature">🍫 Натуральный шоколад</div>
+<div class="feature">🎁 Подарки</div>
+<div class="feature">✨ Эстетика</div>
 
 </div>
 
 </section>
 
+<!-- CONTACT -->
+<section class="section" id="contact">
+<h2>Контакты</h2>
+<p style="text-align:center;">
+Telegram / Instagram
+</p>
+</section>
+
 <!-- FOOTER -->
 <footer class="footer">
-
-<p>Связаться с нами:</p>
-<br>
-
-<a href="https://t.me/+SHC6dyDm288yNjg6">Telegram</a>
-|
-<a href="https://www.instagram.com/_chocoberry39">Instagram</a>
-
+Telegram | Instagram
 </footer>
 
-<!-- JS -->
 <script>
 function toggleTheme(){
 document.body.classList.toggle("dark");
