@@ -21,8 +21,10 @@ font-family:'Inter',sans-serif;
 background:#fff7f8;
 color:#4b2c24;
 line-height:1.6;
-transition:0.3s;
+
+/* 💎 плавность */
 scroll-behavior:smooth;
+transition:0.3s;
 }
 
 /* 🌙 BUTTON */
@@ -39,19 +41,20 @@ background:white;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* 🔥 NAVIGATION MENU */
+/* 🔥 MENU */
 .nav{
 position:fixed;
 top:15px;
 left:50%;
 transform:translateX(-50%);
 display:flex;
-gap:25px;
-padding:10px 18px;
-background:rgba(255,255,255,0.7);
+gap:18px;
+padding:10px 16px;
+background:rgba(255,255,255,0.75);
 backdrop-filter:blur(12px);
 border-radius:14px;
 z-index:999;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
 .nav a{
@@ -59,10 +62,6 @@ text-decoration:none;
 color:#b33c5a;
 font-weight:600;
 font-size:14px;
-}
-
-.nav a:hover{
-opacity:0.6;
 }
 
 /* HERO */
@@ -75,7 +74,6 @@ padding:30px 20px;
 background:linear-gradient(135deg,#ffd9e1,#ffecef,#fff7f8);
 }
 
-/* CARD */
 .card{
 max-width:500px;
 width:100%;
@@ -110,7 +108,6 @@ color:#8b5a4d;
 margin-bottom:30px;
 }
 
-/* BUTTONS */
 .btn{
 display:block;
 text-decoration:none;
@@ -129,7 +126,7 @@ transition:.25s;
 
 /* SECTIONS */
 .section{
-padding:80px 20px;
+padding:90px 20px;
 max-width:900px;
 margin:auto;
 }
@@ -155,6 +152,7 @@ border-radius:24px;
 box-shadow:0 10px 30px rgba(0,0,0,.1);
 }
 
+/* FEATURES */
 .features{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -173,7 +171,7 @@ box-shadow:0 10px 25px rgba(0,0,0,.05);
 /* FOOTER */
 .footer{
 text-align:center;
-padding:40px 20px;
+padding:60px 20px;
 background:#ffe5ea;
 }
 
@@ -181,6 +179,7 @@ background:#ffe5ea;
 text-decoration:none;
 color:#b33c5a;
 font-weight:600;
+margin:0 10px;
 }
 
 /* 🌙 DARK MODE */
@@ -206,18 +205,16 @@ body.dark h2{
 color:#ff7aa8;
 }
 
-body.dark a{
-color:#ff7aa8;
-}
-
 /* MOBILE */
 @media(max-width:768px){
 .about{grid-template-columns:1fr;}
 h1{font-size:30px;}
 .section h2{font-size:28px;}
+
 .nav{
 font-size:12px;
-gap:15px;
+gap:10px;
+padding:8px 12px;
 }
 }
 
@@ -229,7 +226,7 @@ gap:15px;
 <!-- 🌙 BUTTON -->
 <button class="theme-btn" onclick="toggleTheme()">🌙</button>
 
-<!-- 🔥 NAVIGATION -->
+<!-- MENU -->
 <nav class="nav">
   <a href="#about">О нас</a>
   <a href="#features">Почему мы</a>
@@ -241,7 +238,7 @@ gap:15px;
 
 <div class="card">
 
-<img src="logo.png.png" alt="Клубника в шоколаде" class="logo">
+<img src="logo.png.png" class="logo">
 
 <h1>Клубника в шоколаде</h1>
 
@@ -268,19 +265,15 @@ Instagram
 <h2>О нас</h2>
 
 <div class="about">
-
 <img src="about.jpg.jpg">
-
 <div class="about-text">
-<p>Мы создаём вкусные десерты из свежей клубники и качественного шоколада.</p>
+<p>Мы создаём десерты из свежей клубники и шоколада.</p>
 </div>
-
 </div>
 </section>
 
 <!-- FEATURES -->
 <section class="section" id="features">
-
 <h2>Почему выбирают нас</h2>
 
 <div class="features">
@@ -291,26 +284,36 @@ Instagram
 <div class="feature">✨ Эстетика</div>
 
 </div>
-
 </section>
 
 <!-- CONTACT -->
-<section class="section" id="contact">
-<h2>Контакты</h2>
-<p style="text-align:center;">
-Telegram / Instagram
-</p>
+<section class="footer" id="contact">
+<p>Связаться с нами:</p>
+<br>
+<a href="https://t.me/+SHC6dyDm288yNjg6">Telegram</a>
+<a href="https://www.instagram.com/_chocoberry39">Instagram</a>
 </section>
-
-<!-- FOOTER -->
-<footer class="footer">
-Telegram | Instagram
-</footer>
 
 <script>
 function toggleTheme(){
 document.body.classList.toggle("dark");
 }
+
+/* 💎 SMOOTH APPLE SCROLL */
+document.querySelectorAll('.nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const target = document.querySelector(this.getAttribute('href'));
+
+    if (target) {
+      window.scrollTo({
+        top: target.offsetTop - 80,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
 </script>
 
 </body>
