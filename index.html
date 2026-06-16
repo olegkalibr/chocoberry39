@@ -24,6 +24,7 @@ color:#4b2c24;
 line-height:1.6;
 scroll-behavior:smooth;
 transition:0.3s;
+overflow-x:hidden;
 }
 
 /* 🌙 BUTTON */
@@ -205,31 +206,52 @@ body.dark h2{
 color:#ff7aa8;
 }
 
-/* 📱 FIX MOBILE — ГЛАВНАЯ ПРОБЛЕМА (ПРОВАЛЫ УБРАНЫ) */
-@media (max-width: 768px){
+/* 📱 MOBILE FIX — ЧТОБЫ НЕ СЪЕЗЖАЛО */
+@media (max-width:768px){
 
 .section{
-padding:40px 14px !important;
+padding:40px 14px;
 }
 
 .section h2{
 font-size:24px;
 margin-bottom:18px;
-line-height:1.2;
+text-align:center;
 }
 
-/* ❗ ВАЖНО: убираем grid → делаем норм колонку */
+.hero{
+padding:16px 10px;
+}
+
+.card{
+width:100%;
+max-width:100%;
+padding:22px;
+}
+
+/* MENU — НЕ СЖИМАЕТСЯ И НЕ СЪЕЗЖАЕТ */
+.nav{
+width:calc(100% - 20px);
+left:10px;
+transform:none;
+justify-content:center;
+gap:10px;
+padding:10px;
+font-size:12px;
+}
+
+/* ABOUT — УБРАЛИ GRID ПРОБЛЕМУ */
 .about{
 display:flex;
 flex-direction:column;
 gap:18px;
-align-items:center;
 text-align:center;
 }
 
 .about img{
 width:100%;
-max-width:320px;
+max-width:100%;
+border-radius:18px;
 }
 
 .about-text{
@@ -238,28 +260,13 @@ line-height:1.5;
 padding:0 6px;
 }
 
-.hero{
-padding:18px 10px;
-}
-
-.card{
-padding:22px;
-}
-
-.nav{
-gap:8px;
-padding:8px 10px;
-font-size:11px;
-max-width:95%;
-}
-
-h1{
-font-size:30px;
-}
-
 .btn{
 font-size:15px;
 padding:14px;
+}
+
+h1{
+font-size:28px;
 }
 }
 
@@ -280,7 +287,6 @@ padding:14px;
 
 <!-- HERO -->
 <section class="hero">
-
 <div class="card">
 
 <img src="logo.png.png" class="logo">
@@ -293,49 +299,28 @@ padding:14px;
 
 <p class="city">📍 Калининград</p>
 
-<a class="btn telegram" href="https://t.me/+SHC6dyDm288yNjg6" target="_blank">
-Telegram
-</a>
-
-<a class="btn instagram" href="https://www.instagram.com/_chocoberry39" target="_blank">
-Instagram
-</a>
+<a class="btn telegram" href="https://t.me/+SHC6dyDm288yNjg6" target="_blank">Telegram</a>
+<a class="btn instagram" href="https://www.instagram.com/_chocoberry39" target="_blank">Instagram</a>
 
 </div>
-
 </section>
 
 <!-- ABOUT -->
 <section class="section" id="about">
-
 <h2>О нас</h2>
 
 <div class="about">
-
 <img src="about.jpg.jpg">
 
 <div class="about-text">
-
-<p>
-Мы создаём десерты из свежей клубники и бельгийского шоколада — это не просто сладости, а эмоции, которые хочется запомнить.
-</p>
-
+<p>Мы создаём десерты из свежей клубники и бельгийского шоколада — это эмоции, а не просто сладости.</p>
 <br>
-
-<p>
-Каждый набор собирается вручную с вниманием к вкусу и эстетике.
-</p>
-
+<p>Каждый набор собирается вручную с вниманием к вкусу и эстетике.</p>
 <br>
-
-<p>
-Мы делаем продукт для тех, кто ценит стиль, качество и атмосферу.
-</p>
-
+<p>Мы делаем продукт для тех, кто ценит стиль и качество.</p>
 </div>
 
 </div>
-
 </section>
 
 <!-- FEATURES -->
@@ -344,12 +329,10 @@ Instagram
 <h2>Почему выбирают нас</h2>
 
 <div class="features">
-
 <div class="feature">🍓 Свежая клубника</div>
 <div class="feature">🍫 Натуральный шоколад</div>
 <div class="feature">🎁 Подарки</div>
 <div class="feature">✨ Эстетика</div>
-
 </div>
 
 </section>
