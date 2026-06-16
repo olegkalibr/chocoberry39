@@ -233,13 +233,26 @@ padding:22px;
 
 /* MENU — НЕ СЖИМАЕТСЯ И НЕ СЪЕЗЖАЕТ */
 .nav{
-width:calc(100% - 20px);
-left:10px;
-transform:none;
+top:70px;
+left:50%;
+transform:translateX(-50%);
+
+width:auto;
+max-width:340px;
+
+display:flex;
 justify-content:center;
-gap:10px;
-padding:10px;
-font-size:12px;
+align-items:center;
+
+gap:20px;
+
+padding:12px 20px;
+
+font-size:14px;
+
+border-radius:18px;
+
+white-space:nowrap;
 }
 
 /* ABOUT — УБРАЛИ GRID ПРОБЛЕМУ */
@@ -284,7 +297,6 @@ font-size:28px;
 <nav class="nav">
   <a href="#about">О нас</a>
   <a href="#features">Почему мы</a>
-  <a href="#contact">Контакты</a>
 </nav>
 
 <!-- HERO -->
